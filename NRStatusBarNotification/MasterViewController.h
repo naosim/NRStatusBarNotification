@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@interface MasterViewController : UIViewController
 
-@class DetailViewController;
+- (IBAction)hello;
+- (IBAction)byebye;
 
-@interface MasterViewController : UITableViewController
-
-@property (strong, nonatomic) DetailViewController *detailViewController;
-
+- (IBAction)startLoad;
+- (IBAction)add;
 @end

@@ -7,120 +7,86 @@
 //
 
 #import "MasterViewController.h"
+#import "NRMessageNotification.h"
+#import "NRStatusBarNotificationData.h"
 
-#import "DetailViewController.h"
-
-@interface MasterViewController () {
-    NSMutableArray *_objects;
+@interface CustomNotificationData : NSObject<NRStatusBarNotificationData> {
+    int value;
+    UILabel* label;
 }
+- (void)add;
 @end
 
-@implementation MasterViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+@implementation CustomNotificationData
+@synthesize notofication;
+@synthesize notificationView;
+- (id)init {
+    if(self = [super init]) {
+        notificationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        notificationView.backgroundColor = [UIColor blackColor];
+        
+        UIActivityIndicatorView* aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        aiv.center = CGPointMake(40, 10);
+        [aiv startAnimating];
+        [notificationView addSubview:aiv];
+        
+        label = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 200, 20)];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        label.font = [UIFont fontWithName:@"Arial-BoldMT" size:15];
+        [notificationView addSubview:label];
     }
     return self;
 }
-							
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+- (void)start {
+    value = 0;
+    [self updateLabel];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateLabel {
+    label.text = [NSString stringWithFormat:@"%d", value];
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return _objects.count;
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+- (void)add {
+    value += 20;
+    [self updateLabel];
+    if(value == 100) {
+        [self.notofication removeNotificationData:self];
     }
 }
+@end
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (!self.detailViewController) {
-        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    }
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+@interface MasterViewController() {
+    CustomNotificationData* customNotificationData;
 }
 
+@end
+
+
+
+@implementation MasterViewController
+
+- (IBAction)hello {
+    static int n = 0;
+    [NRMessageNotification showWithMessage:[NSString stringWithFormat:@"hello %d", n++]];
+}
+
+- (IBAction)byebye {
+    static int n = 0;
+    NRMessageNotificationData* data = [NRMessageNotificationData new];
+    data.message = [NSString stringWithFormat:@"byebye %d", n++];
+    data.notificationView.backgroundColor = [UIColor yellowColor];
+    data.notificationView.textColor = [UIColor blackColor];
+    data.duration = 1;
+    [NRStatusBarNotification showWithNotificationData:data];
+}
+
+- (IBAction)startLoad {
+    customNotificationData = [CustomNotificationData new];
+    [NRStatusBarNotification showWithNotificationData:customNotificationData];
+}
+- (IBAction)add {
+    [customNotificationData add];
+}
 @end

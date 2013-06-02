@@ -17,14 +17,18 @@
 		4470758B175B22380059E6BD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4470758A175B22380059E6BD /* Default@2x.png */; };
 		4470758D175B22380059E6BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4470758C175B22380059E6BD /* Default-568h@2x.png */; };
 		44707590175B22380059E6BD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4470758F175B22380059E6BD /* MasterViewController.m */; };
-		44707593175B22380059E6BD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44707592175B22380059E6BD /* DetailViewController.m */; };
 		44707596175B22380059E6BD /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44707594175B22380059E6BD /* MasterViewController.xib */; };
-		44707599175B22380059E6BD /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44707597175B22380059E6BD /* DetailViewController.xib */; };
 		447075A1175B22380059E6BD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 447075A0175B22380059E6BD /* SenTestingKit.framework */; };
 		447075A2175B22380059E6BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44707576175B22370059E6BD /* UIKit.framework */; };
 		447075A3175B22380059E6BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44707578175B22370059E6BD /* Foundation.framework */; };
 		447075AB175B22380059E6BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 447075A9175B22380059E6BD /* InfoPlist.strings */; };
 		447075AE175B22380059E6BD /* NRStatusBarNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075AD175B22380059E6BD /* NRStatusBarNotificationTests.m */; };
+		447075CB175B71D60059E6BD /* NRMessageNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075C8175B71D60059E6BD /* NRMessageNotificationData.m */; };
+		447075CC175B71D60059E6BD /* NRMessageNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075C8175B71D60059E6BD /* NRMessageNotificationData.m */; };
+		447075CF175B71EF0059E6BD /* NRMessageNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075CE175B71EF0059E6BD /* NRMessageNotification.m */; };
+		447075D0175B71EF0059E6BD /* NRMessageNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075CE175B71EF0059E6BD /* NRMessageNotification.m */; };
+		447075D3175B71F90059E6BD /* NRStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075D2175B71F90059E6BD /* NRStatusBarNotification.m */; };
+		447075D4175B71F90059E6BD /* NRStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 447075D2175B71F90059E6BD /* NRStatusBarNotification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,16 +57,21 @@
 		4470758C175B22380059E6BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4470758E175B22380059E6BD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4470758F175B22380059E6BD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		44707591175B22380059E6BD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		44707592175B22380059E6BD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		44707595175B22380059E6BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		44707598175B22380059E6BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		4470759F175B22380059E6BD /* NRStatusBarNotificationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NRStatusBarNotificationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447075A0175B22380059E6BD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		447075A8175B22380059E6BD /* NRStatusBarNotificationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NRStatusBarNotificationTests-Info.plist"; sourceTree = "<group>"; };
 		447075AA175B22380059E6BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		447075AC175B22380059E6BD /* NRStatusBarNotificationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRStatusBarNotificationTests.h; sourceTree = "<group>"; };
 		447075AD175B22380059E6BD /* NRStatusBarNotificationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NRStatusBarNotificationTests.m; sourceTree = "<group>"; };
+		447075C7175B71D60059E6BD /* NRMessageNotificationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NRMessageNotificationData.h; path = StatusBarNotification/NotificationData/NRMessageNotificationData.h; sourceTree = "<group>"; };
+		447075C8175B71D60059E6BD /* NRMessageNotificationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NRMessageNotificationData.m; path = StatusBarNotification/NotificationData/NRMessageNotificationData.m; sourceTree = "<group>"; };
+		447075C9175B71D60059E6BD /* NRStatusBarNotificationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NRStatusBarNotificationData.h; path = StatusBarNotification/NotificationData/NRStatusBarNotificationData.h; sourceTree = "<group>"; };
+		447075CA175B71D60059E6BD /* NRStatusBarNotificationDataRemove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NRStatusBarNotificationDataRemove.h; path = StatusBarNotification/NotificationData/NRStatusBarNotificationDataRemove.h; sourceTree = "<group>"; };
+		447075CD175B71EF0059E6BD /* NRMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NRMessageNotification.h; path = StatusBarNotification/NRMessageNotification.h; sourceTree = "<group>"; };
+		447075CE175B71EF0059E6BD /* NRMessageNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NRMessageNotification.m; path = StatusBarNotification/NRMessageNotification.m; sourceTree = "<group>"; };
+		447075D1175B71F90059E6BD /* NRStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NRStatusBarNotification.h; path = StatusBarNotification/NRStatusBarNotification.h; sourceTree = "<group>"; };
+		447075D2175B71F90059E6BD /* NRStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NRStatusBarNotification.m; path = StatusBarNotification/NRStatusBarNotification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +131,12 @@
 		4470757C175B22370059E6BD /* NRStatusBarNotification */ = {
 			isa = PBXGroup;
 			children = (
+				447075B7175B22BD0059E6BD /* StatusBarNotification */,
 				44707585175B22380059E6BD /* AppDelegate.h */,
 				44707586175B22380059E6BD /* AppDelegate.m */,
 				4470758E175B22380059E6BD /* MasterViewController.h */,
 				4470758F175B22380059E6BD /* MasterViewController.m */,
-				44707591175B22380059E6BD /* DetailViewController.h */,
-				44707592175B22380059E6BD /* DetailViewController.m */,
 				44707594175B22380059E6BD /* MasterViewController.xib */,
-				44707597175B22380059E6BD /* DetailViewController.xib */,
 				4470757D175B22370059E6BD /* Supporting Files */,
 			);
 			path = NRStatusBarNotification;
@@ -166,6 +173,29 @@
 				447075A9175B22380059E6BD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		447075B7175B22BD0059E6BD /* StatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				447075CD175B71EF0059E6BD /* NRMessageNotification.h */,
+				447075CE175B71EF0059E6BD /* NRMessageNotification.m */,
+				447075D1175B71F90059E6BD /* NRStatusBarNotification.h */,
+				447075D2175B71F90059E6BD /* NRStatusBarNotification.m */,
+				447075C6175B71AD0059E6BD /* NotificationData */,
+			);
+			name = StatusBarNotification;
+			sourceTree = "<group>";
+		};
+		447075C6175B71AD0059E6BD /* NotificationData */ = {
+			isa = PBXGroup;
+			children = (
+				447075C7175B71D60059E6BD /* NRMessageNotificationData.h */,
+				447075C8175B71D60059E6BD /* NRMessageNotificationData.m */,
+				447075C9175B71D60059E6BD /* NRStatusBarNotificationData.h */,
+				447075CA175B71D60059E6BD /* NRStatusBarNotificationDataRemove.h */,
+			);
+			name = NotificationData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +274,6 @@
 				4470758B175B22380059E6BD /* Default@2x.png in Resources */,
 				4470758D175B22380059E6BD /* Default-568h@2x.png in Resources */,
 				44707596175B22380059E6BD /* MasterViewController.xib in Resources */,
-				44707599175B22380059E6BD /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +311,9 @@
 				44707583175B22380059E6BD /* main.m in Sources */,
 				44707587175B22380059E6BD /* AppDelegate.m in Sources */,
 				44707590175B22380059E6BD /* MasterViewController.m in Sources */,
-				44707593175B22380059E6BD /* DetailViewController.m in Sources */,
+				447075CB175B71D60059E6BD /* NRMessageNotificationData.m in Sources */,
+				447075CF175B71EF0059E6BD /* NRMessageNotification.m in Sources */,
+				447075D3175B71F90059E6BD /* NRStatusBarNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				447075AE175B22380059E6BD /* NRStatusBarNotificationTests.m in Sources */,
+				447075CC175B71D60059E6BD /* NRMessageNotificationData.m in Sources */,
+				447075D0175B71EF0059E6BD /* NRMessageNotification.m in Sources */,
+				447075D4175B71F90059E6BD /* NRStatusBarNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +353,6 @@
 				44707595175B22380059E6BD /* en */,
 			);
 			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		44707597175B22380059E6BD /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44707598175B22380059E6BD /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 		447075A9175B22380059E6BD /* InfoPlist.strings */ = {
